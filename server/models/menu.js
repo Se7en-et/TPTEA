@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
       through: 'MenuLocation',
       foreignKey: 'menuId',
     })
+    Menu.hasMany(models.menuCategory, {
+      through: 'MenuMenuCategory',
+      foreignKey: 'menuId',
+    })
   }
   return Menu
 }
